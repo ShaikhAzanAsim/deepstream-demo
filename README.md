@@ -31,6 +31,22 @@ So there are effectively two ONNX exports in this pipeline:
 - **DeepStream ONNX** (DeepStream-Yolo's `export_yolo11.py`) — the one you
   actually build the `.engine` from for DeepStream. Steps below.
 
+
+## Demo — YOLO11n on NVIDIA DeepStream
+
+YOLO11n object detection running on NVIDIA DeepStream with TensorRT acceleration. The screenshot below shows vehicle detections with bounding boxes rendered across the video stream.
+
+### Screenshot
+
+![YOLO11n object detection on DeepStream](assets/img.png)
+
+### Demo Video
+
+▶️ [**Watch the full DeepStream demo on Google Drive**](https://drive.google.com/file/d/1ZmFTCFhoLAO01p4iYd2J6m1Ri6vSnEAd/view?usp=sharing)
+
+The video demonstrates the detection pipeline running on a video stream, with object bounding boxes rendered by DeepStream.
+
+
 ## Step 1 — Export .pt → ONNX
 
 ```bash
