@@ -1,0 +1,40 @@
+[application]
+enable-perf-measurement=1
+perf-measurement-interval-sec=5
+
+[tiled-display]
+enable=0
+
+[source0]
+enable=1
+# type=2 -> RTSP, type=3 -> file/URI. Swap the uri line below for your camera:
+#   uri=rtsp://<user>:<pass>@<camera-ip>:554/stream
+type=3
+uri=file:///opt/nvidia/deepstream/deepstream/samples/streams/sample_1080p_h264.mp4
+num-sources=1
+gpu-id=0
+
+[sink0]
+enable=1
+# type=2 -> render to screen (needs a display attached), type=1 -> fakesink,
+# type=3 -> save to file (add a matching [sink0] output-file= line + encoder)
+type=2
+sync=0
+gpu-id=0
+
+[streammux]
+gpu-id=0
+batch-size=1
+batched-push-timeout=40000
+width=1920
+height=1080
+
+[primary-gie]
+enable=1
+gpu-id=0
+gie-unique-id=1
+nvbuf-memory-type=0
+config-file=5_config_infer_primary_yolo11.txt
+
+[tests]
+file-loop=0
